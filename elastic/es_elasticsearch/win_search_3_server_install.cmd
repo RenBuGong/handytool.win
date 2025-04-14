@@ -19,7 +19,8 @@ echo 如果已经安装,会报 code 8 错误.
 echo.
 pause
 CALL %SEARCH_SERVER_MNG% "install"
-
+sc config "%SEARCH_SERVER_INSTALL_NAME%" start=auto
 pause
 
 :: https://www.elastic.co/guide/en/elasticsearch/reference/current/zip-windows.html
+
