@@ -121,22 +121,22 @@ rem 远程操作符: 添加/删除 key
 rem -----------------------------------------------------------------------------
 if "%arg5%"=="__add.key__" if "%arg6%"=="" (
     echo --in if 3--
-    PowerShell -NoProfile -ExecutionPolicy Bypass -File "%~dp0quick_kit.ps1" -Port "%port%" -RemoteHost "%host%" -RemoteUser "%defUser%" -SshKeyPath "%sshKeyPath%" -PubKeyPath "%arg6%" -Action "add"
+    PowerShell -NoProfile -ExecutionPolicy Bypass -File "%~dp0remote_key_manager.ps1" -Port "%port%" -RemoteHost "%host%" -RemoteUser "%defUser%" -SshKeyPath "%sshKeyPath%" -PubKeyPath "%arg6%" -Action "add"
     exit /b
 )
 if "%arg5%"=="__remove.key__" if "%arg6%"=="" (
     echo --in if 4--
-    PowerShell -NoProfile -ExecutionPolicy Bypass -File "%~dp0quick_kit.ps1" -Port "%port%" -RemoteHost "%host%" -RemoteUser "%defUser%" -SshKeyPath "%sshKeyPath%" -PubKeyPath "%arg6%" -Action "remove"
+    PowerShell -NoProfile -ExecutionPolicy Bypass -File "%~dp0remote_key_manager.ps1" -Port "%port%" -RemoteHost "%host%" -RemoteUser "%defUser%" -SshKeyPath "%sshKeyPath%" -PubKeyPath "%arg6%" -Action "remove"
     exit /b
 )
 if not "%arg5%"=="" if "%arg6%"=="__add.key__" (
     echo --in if 5--
-    PowerShell -NoProfile -ExecutionPolicy Bypass -File "%~dp0quick_kit.ps1" -Port "%port%" -RemoteHost "%host%" -RemoteUser "%arg5%"    -SshKeyPath "%sshKeyPath%" -PubKeyPath "%arg7%" -Action "add"
+    PowerShell -NoProfile -ExecutionPolicy Bypass -File "%~dp0remote_key_manager.ps1" -Port "%port%" -RemoteHost "%host%" -RemoteUser "%arg5%"    -SshKeyPath "%sshKeyPath%" -PubKeyPath "%arg7%" -Action "add"
     exit /b
 )
 if not "%arg5%"=="" if "%arg6%"=="__remove.key__" (
     echo --in if 6--
-    PowerShell -NoProfile -ExecutionPolicy Bypass -File "%~dp0quick_kit.ps1" -Port "%port%" -RemoteHost "%host%" -RemoteUser "%arg5%"    -SshKeyPath "%sshKeyPath%" -PubKeyPath "%arg7%" -Action "remove"
+    PowerShell -NoProfile -ExecutionPolicy Bypass -File "%~dp0remote_key_manager.ps1" -Port "%port%" -RemoteHost "%host%" -RemoteUser "%arg5%"    -SshKeyPath "%sshKeyPath%" -PubKeyPath "%arg7%" -Action "remove"
     exit /b
 )
 
